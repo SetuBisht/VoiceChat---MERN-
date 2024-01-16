@@ -13,26 +13,23 @@ const Home = () => {
     };
     const history = useHistory();
     function startRegister() {
-        history.push('/register');
+        history.push('/authenticate');
     }
     return (
         <div className={styles.cardWrapper}>
-            <Card title="Welcome to Chathouse!" icon="logo">
+            <Card title="Welcome to Codershouse!" icon="logo">
                 <p className={styles.text}>
-                    We’re working hard to get ready for everyone!
+                    We’re working hard to get Codershouse ready for everyone!
                     While we wrap up the finishing youches, we’re adding people
                     gradually to make sure nothing breaks
                 </p>
                 <div>
-                    <Button onClick={startRegister} text="Get your username" />
+                    <Button onClick={startRegister} text="Let's Go" />
                 </div>
                 <div className={styles.signinWrapper}>
                     <span className={styles.hasInvite}>
                         Have an invite text?
                     </span>
-                    <Link style={signInLinkStyle} to="/login">
-                        Sign in
-                    </Link>
                 </div>
             </Card>
         </div>

@@ -52,6 +52,7 @@ const GuestRoute = ({ children, ...rest }) => {
 
 const SemiProtectedRoute = ({ children, ...rest }) => {
   const { user, isAuth } = useSelector((state) => state.auth);
+  console.log(isAuth, "isAuth");
   return (
     <Route
       {...rest}
