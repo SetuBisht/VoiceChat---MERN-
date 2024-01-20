@@ -30,6 +30,7 @@ export const useWebRTC = (roomId, user) => {
   useEffect(() => {
     const initChat = async () => {
       socket.current = socketInit();
+      console.log(socket.current, "socket.current");
       await captureMedia();
       addNewClient({ ...user, muted: true }, () => {
         const localElement = audioElements.current[user.id];
