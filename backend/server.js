@@ -6,9 +6,10 @@ const router = require("./routes");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const server = require("http").createServer(app);
+const ACTIONS = require("./actions");
 const io = require("socket.io")(server, {
   cors: {
-    origin: process.env.FRONT_URL,
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -29,6 +30,8 @@ app.use(router);
 app.get("/", (req, res) => {
   res.send("Hello from express Js");
 });
+
+// Sockets
 const socketUserMap = {};
 
 io.on("connection", (socket) => {
@@ -119,7 +122,7 @@ io.on("connection", (socket) => {
   };
 
   socket.on(ACTIONS.LEAVE, leaveRoom);
-  //io event
+
   socket.on("disconnecting", leaveRoom);
 });
 

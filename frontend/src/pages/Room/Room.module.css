@@ -24,6 +24,7 @@
 }
 
 .goBack {
+    border: none;
     display: flex;
     align-items: center;
     background: none;
@@ -73,6 +74,7 @@
 }
 
 .actionBtn {
+    border: none;
     background: #262626;
     outline: none;
     margin-left: 2rem;
@@ -105,6 +107,7 @@
 }
 
 .micBtn {
+    border: none;
     background: #212121;
     position: absolute;
     bottom: 0;

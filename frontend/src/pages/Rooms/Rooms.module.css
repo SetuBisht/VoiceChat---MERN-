@@ -56,6 +56,11 @@
     border-radius: 20px;
     color: #fff;
     transition: all 0.3s ease-in-out;
+        color: inherit;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
 }
 
 .startRoomButton span {
