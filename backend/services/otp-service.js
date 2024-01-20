@@ -1,6 +1,5 @@
 const crypto = require("crypto");
 const hashService = require("./hash-service");
-require("dotenv");
 const smsSid = process.env.SMS_SID;
 const smsAuthToken = process.env.SMS_AUTH_TOKEN;
 console.log(smsSid, smsAuthToken, "smsAuthToken");
