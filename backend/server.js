@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
@@ -39,6 +39,7 @@ const socketUserMap = {};
 io.on("connection", (socket) => {
   console.log("New connection", socket.id);
   socket.on(ACTIONS.JOIN, ({ roomId, user }) => {
+    console.log(roomId, user, " roomId, user");
     socketUserMap[socket.id] = user;
     const clients = Array.from(io.sockets.adapter.rooms.get(roomId) || []);
     clients.forEach((clientId) => {
