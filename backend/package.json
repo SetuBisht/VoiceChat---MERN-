@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build steps needed'"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
