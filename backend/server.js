@@ -18,9 +18,11 @@ const io = require("socket.io")(server, {
 
 app.use(cookieParser());
 const corsOption = {
+  headers: ["Content-Type"],
   credentials: true,
   origin: [process.env.FRONT_URL],
 };
+app.options("*", cors());
 app.use(cors(corsOption));
 app.use("/storage", express.static("storage"));
 
