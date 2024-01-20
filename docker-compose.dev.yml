@@ -7,7 +7,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /C:/Users/TCZ-NISHU/Desktop/New folder:/data/db
+      - C:/Users/TCZ-NISHU/Desktop/frontend:/data/db
   backend:
     build:
       dockerfile: Dockerfile.dev
