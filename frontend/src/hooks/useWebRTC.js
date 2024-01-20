@@ -30,12 +30,11 @@ export const useWebRTC = (roomId, user) => {
   useEffect(() => {
     const initChat = async () => {
       socket.current = socketInit();
+      socket.current.on("connect", () => {
+        console.log("Connected to the server");
+      });
       console.log(socket.current, "socket.current");
       await captureMedia();
-      socket.current.emit(ACTIONS.JOIN, {
-        roomId,
-        user,
-      });
       addNewClient({ ...user, muted: true }, () => {
         const localElement = audioElements.current[user.id];
         if (localElement) {
@@ -57,6 +56,10 @@ export const useWebRTC = (roomId, user) => {
       socket.current.on(ACTIONS.UNMUTE, ({ peerId, userId }) => {
         handleSetMute(false, userId);
       });
+      socket.current.emit(ACTIONS.JOIN, {
+        roomId,
+        user,
+      });
 
       async function captureMedia() {
         // Start capturing local audio stream.
@@ -65,7 +68,6 @@ export const useWebRTC = (roomId, user) => {
         });
       }
       async function handleNewPeer({ peerId, createOffer, user: remoteUser }) {
-        console.log(peerId, "");
         if (peerId in connections.current) {
           return console.warn(
             `You are already connected with ${peerId} (${user.name})`

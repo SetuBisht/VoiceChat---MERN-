@@ -8,7 +8,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const ACTIONS = require("./actions");
-
+console.log(ACTIONS, "ACTIONS");
 const io = require("socket.io")(server, {
   cors: {
     origin: process.env.FRONT_URL,
@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 const socketUserMap = {};
 
 io.on("connection", (socket) => {
-  console.log("New connection", socket.id);
+  console.log("New connection", ACTIONS);
   socket.on(ACTIONS.JOIN, ({ roomId, user }) => {
     console.log(roomId, user, " roomId, user");
     socketUserMap[socket.id] = user;
