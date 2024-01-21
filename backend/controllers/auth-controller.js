@@ -95,16 +95,12 @@ class AuthController {
     res.cookie("refreshToken", refreshToken, {
       maxAge: 1000 * 60 * 60 * 24 * 30,
       httpOnly: true,
-      sameSite: "lax",
-      secure: true,
       domain: process.env.FRONT_URL,
     });
 
     res.cookie("accessToken", accessToken, {
       maxAge: 1000 * 60 * 60 * 24 * 30,
       httpOnly: true,
-      sameSite: "lax",
-      secure: true,
       domain: process.env.FRONT_URL,
     });
 
