@@ -5,7 +5,7 @@ import TextInput from '../../../../components/shared/TextInput/TextInput';
 import styles from '../StepPhoneEmail.module.css';
 import { sendOtpEmail } from '../../../../http/index';
 import { useDispatch } from 'react-redux';
-import { setOtp } from '../../../../store/authSlice';
+import { setOtpEmail } from '../../../../store/authSlice';
 const Email = ({ onNext }) => {
     const [email, setEmail] = useState('');
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Email = ({ onNext }) => {
         if (!email) return;
         const { data } = await sendOtpEmail({ email: email });
         console.log(data);
-        dispatch(setOtp({ email: data.email, hash: data.hash }));
+        dispatch(setOtpEmail({ email: data.email, hash: data.hash }));
         onNext();
     }
 

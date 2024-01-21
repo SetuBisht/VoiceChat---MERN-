@@ -3,7 +3,7 @@ import Card from '../../../components/shared/Card/Card';
 import TextInput from '../../../components/shared/TextInput/TextInput';
 import Button from '../../../components/shared/Button/Button';
 import styles from './StepOtp.module.css';
-import { verifyOtp } from '../../../http';
+import { verifyOtp,verifyOtpEmail } from '../../../http';
 import { useSelector } from 'react-redux';
 import { setAuth } from '../../../store/authSlice';
 import { useDispatch } from 'react-redux';
@@ -11,15 +11,26 @@ import { useDispatch } from 'react-redux';
 const StepOtp = () => {
     const [otp, setOtp] = useState('');
     const dispatch = useDispatch();
-    const { phone, hash } = useSelector((state) => state.auth.otp);
+    const { phone, hash, email } = useSelector((state) => state.auth.otp);
     async function submit() {
-        if (!otp || !phone || !hash) return;
-        try {
-            const { data } = await verifyOtp({ otp, phone, hash });
-            dispatch(setAuth(data));
-        } catch (err) {
-            console.log(err);
+        if(email){
+            if (!otp || !email || !hash) return;
+                try {
+                const { data } = await verifyOtpEmail({ otp, email, hash });
+                dispatch(setAuth(data));
+                } catch (err) {
+                console.log(err);
+                }
+        }else{
+                    if (!otp || !phone || !hash) return;
+                    try {
+                    const { data } = await verifyOtp({ otp, phone, hash });
+                    dispatch(setAuth(data));
+                    } catch (err) {
+                    console.log(err);
+                    }
         }
+       
     }
     return (
         <>
