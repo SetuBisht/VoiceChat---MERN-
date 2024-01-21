@@ -30,7 +30,7 @@ export const authSlice = createSlice({
       state.otp.email = "";
     },
     setOtpEmail: (state, action) => {
-      const { phone, hash } = action.payload;
+      const { email, hash } = action.payload;
       state.otp.email = email;
       state.otp.hash = hash;
       state.otp.phone = "";
