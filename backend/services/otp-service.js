@@ -22,6 +22,11 @@ class OtpService {
   }
 
   async sendByEmail(email, otp) {
+    console.log(
+      process.env.EMAIL_USER,
+      process.env.EMAIL_PASS,
+      "process.env.EMAIL_PASS"
+    );
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
