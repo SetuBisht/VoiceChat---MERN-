@@ -47,7 +47,7 @@ const StepOtp = () => {
                         <Button onClick={submit} text="Next" />
                     </div>
                     <p className={styles.bottomParagraph}>
-                        By entering your number, you’re agreeing to our Terms of
+                        By entering your email, you’re agreeing to our Terms of
                         Service and Privacy Policy. Thanks!
                     </p>
                 </Card>

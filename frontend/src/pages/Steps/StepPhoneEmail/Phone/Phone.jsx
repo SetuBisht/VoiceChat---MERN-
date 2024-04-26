@@ -30,7 +30,7 @@ const Phone = ({ onNext }) => {
                     <Button text="Next" onClick={submit} />
                 </div>
                 <p className={styles.bottomParagraph}>
-                    By entering your number, you’re agreeing to our Terms of
+                    By entering your email, you’re agreeing to our Terms of
                     Service and Privacy Policy. Thanks!
                 </p>
             </div>

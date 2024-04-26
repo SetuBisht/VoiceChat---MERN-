@@ -5,7 +5,7 @@ import styles from "./Loader.module.css";
 const Loader = ({ message }) => {
   return (
     <div className="cardWrapper">
-      <Card>
+      <Card icon="social" customClass="card2">
         <svg
           className={styles.spinner}
           width="42"

@@ -17,14 +17,14 @@ const StepPhoneEmail = ({ onNext }) => {
             <div className={styles.cardWrapper}>
                 <div>
                     <div className={styles.buttonWrap}>
-                        <button
+                        {/* <button
                             className={`${styles.tabButton} ${
                                 type === 'phone' ? styles.active : ''
                             }`}
                             onClick={() => setType('phone')}
                         >
                             <img src="/images/phone-white.png" alt="phone" />
-                        </button>
+                        </button> */}
                         <button
                             className={`${styles.tabButton} ${
                                 type === 'email' ? styles.active : ''

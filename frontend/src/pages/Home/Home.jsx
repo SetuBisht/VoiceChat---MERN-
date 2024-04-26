@@ -17,20 +17,18 @@ const Home = () => {
     }
     return (
         <div className={styles.cardWrapper}>
-            <Card title="Welcome to Chathouse!" icon="logo">
+            <Card title="Welcome to VoiceChat!" icon="social">
                 <p className={styles.text}>
-                    We’re working hard to get Chathouse ready for everyone!
-                    While we wrap up the finishing youches, we’re adding people
-                    gradually to make sure nothing breaks
+                    We’re working hard to get VoiceChat ready for everyone!
                 </p>
                 <div>
                     <Button onClick={startRegister} text="Let's Go" />
                 </div>
-                <div className={styles.signinWrapper}>
+                {/* <div className={styles.signinWrapper}>
                     <span className={styles.hasInvite}>
                         Have an invite text?
                     </span>
-                </div>
+                </div> */}
             </Card>
         </div>
     );
